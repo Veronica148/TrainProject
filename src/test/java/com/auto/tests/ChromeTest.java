@@ -40,6 +40,6 @@ public class ChromeTest extends BaseTest{
 
     @AfterClass
     public void afterClass() {
-        driver.quit();
+        driver.close();
     }
 }

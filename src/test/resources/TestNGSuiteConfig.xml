@@ -6,8 +6,16 @@
         <!--<classes>
             <class name="com.techbeamers.TestA"/>
         </classes>-->
-        <packages>
+        <!--<packages>
             <package name="com.auto.tests.*" />
-        </packages>
+        </packages>then uncomment-->
+        <classes>
+            <class name="com.auto.tests.allurecheck.Test1" />
+            <class name="com.auto.tests.allurecheck.Test2" />
+            <class name="com.auto.tests.ChromeTest" />
+        </classes>
+        <!--<classes>
+            <class name="com.auto.tests.ChromeTest" />
+        </classes>-->
     </test>
 </suite>
