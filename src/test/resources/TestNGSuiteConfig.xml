@@ -13,6 +13,7 @@
             <!--<class name="com.auto.tests.allurecheck.Test1" />-->
             <class name="com.auto.tests.allurecheck.Test2" />
             <class name="com.auto.tests.ChromeTest" />
+            <class name="com.auto.tests.Chrome2Test" />
         </classes>
         <!--<classes>
             <class name="com.auto.tests.ChromeTest" />
