@@ -1,10 +1,11 @@
 package com.auto.tests;
 
+import com.auto.tests.driver.WebDriverChrome;
+import io.qameta.allure.Issue;
+import io.qameta.allure.Story;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -12,16 +13,18 @@ import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
 
+@Story("Google Chrome story")
 public class ChromeTest extends BaseTest{
 
     private WebDriver driver;
 
     @BeforeClass
     public void beforeClass() {
-        driver = new ChromeDriver();
+        driver = WebDriverChrome.getInstance().getChromeDriver();
         driver.manage().window().maximize();
     }
 
+    @Issue("TTT-45")
     @Test
     public void verifySearchButton() {
 

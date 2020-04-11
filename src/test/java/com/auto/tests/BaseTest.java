@@ -1,13 +1,16 @@
 package com.auto.tests;
 
+import com.auto.tests.listeners.AllureAttachmentListener;
 import common.utils.Config;
 import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.Listeners;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
+@Listeners(AllureAttachmentListener.class)
 public class BaseTest {
 
     protected static final String propFileName = "application.properties";

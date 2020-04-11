@@ -10,8 +10,8 @@
             <package name="com.auto.tests.*" />
         </packages>then uncomment-->
         <classes>
-            <class name="com.auto.tests.allurecheck.Test1" />
-            <class name="com.auto.tests.allurecheck.Test2" />
+            <!--<class name="com.auto.tests.allurecheck.Test1" />
+            <class name="com.auto.tests.allurecheck.Test2" />-->
             <class name="com.auto.tests.ChromeTest" />
         </classes>
         <!--<classes>
