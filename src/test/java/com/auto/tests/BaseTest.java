@@ -1,7 +1,11 @@
 package com.auto.tests;
 
+import com.auto.tests.driver.WebDriverChrome;
 import com.auto.tests.listeners.AllureAttachmentListener;
 import common.utils.Config;
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Listeners;
 
@@ -9,6 +13,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
+import java.util.concurrent.TimeUnit;
 
 @Listeners(AllureAttachmentListener.class)
 public class BaseTest {
@@ -18,6 +23,7 @@ public class BaseTest {
     protected static String browserToRun = "";
     protected static final String browser = "browser";
     protected static String someUrl = "";
+    protected WebDriver driver;
 
     @BeforeSuite(alwaysRun = true)
     public void setupEnv() {
@@ -61,5 +67,10 @@ public class BaseTest {
         System.out.println("environment BaseTest: "+ environment);
         someUrl = prop.getProperty(environment);
         System.out.println("someUrl: " + someUrl);
+    }
+
+    @AfterSuite
+    public void afterSuite() {
+        driver.close();
     }
 }

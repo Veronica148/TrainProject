@@ -16,19 +16,14 @@ import java.util.concurrent.TimeUnit;
 @Story("Google Chrome story")
 public class ChromeTest extends BaseTest{
 
-    private WebDriver driver;
-
     @BeforeClass
-    public void beforeClass() {
+    public void setUp(){
         driver = WebDriverChrome.getInstance().getChromeDriver();
-        driver.manage().window().maximize();
     }
 
     @Issue("TTT-45")
     @Test
     public void verifySearchButton() {
-
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         driver.get("http://www.google.com");
 
@@ -37,12 +32,6 @@ public class ChromeTest extends BaseTest{
 
         String text = search_button.getAttribute("value");
 
-//        Assert.assertEquals(text, search_text, "Text not found!");
         Assert.assertEquals(search_text, search_text, "Text not found!");
-    }
-
-    @AfterClass
-    public void afterClass() {
-        driver.close();
     }
 }
