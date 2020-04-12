@@ -2,7 +2,7 @@
 <suite name="Demo suite 1" verbose="1" >
     <parameter name="Browser" value="Chrome"/>
 
-    <test name="Demo test 1" >
+    <test name="Demo test allure report" >
         <!--<classes>
             <class name="com.techbeamers.TestA"/>
         </classes>-->
@@ -11,7 +11,7 @@
         </packages>then uncomment-->
         <classes>
             <!--<class name="com.auto.tests.allurecheck.Test1" />-->
-            <class name="com.auto.tests.allurecheck.Test2" />
+            <!--<class name="com.auto.tests.allurecheck.Test2" /-->
             <class name="com.auto.tests.ChromeTest" />
             <class name="com.auto.tests.Chrome2Test" />
         </classes>
