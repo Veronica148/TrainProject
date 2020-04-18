@@ -5,6 +5,7 @@ RUN mkdir /docker
 WORKDIR /docker
 
 COPY pom.xml .
+COPY TestNGSuiteConfig.xml .
 RUN mvn dependency:resolve
 
 COPY src .
