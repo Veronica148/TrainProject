@@ -19,7 +19,7 @@ public class Chrome2Test extends BaseTest{
 
     @BeforeClass
     public void setUp(){
-        driver = WebDriverChrome.getInstance().getChromeDriver();
+//        driver = WebDriverChrome.getInstance().getChromeDriver();
     }
 
     @Issue("TTT-55")

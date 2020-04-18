@@ -7,7 +7,6 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriverException;
 import org.testng.ITestResult;
 import org.testng.TestListenerAdapter;
-import org.testng.annotations.Listeners;
 
 public class AllureAttachmentListener extends TestListenerAdapter {
     @Attachment(value = "Attachment: {0}", type = "image/png")

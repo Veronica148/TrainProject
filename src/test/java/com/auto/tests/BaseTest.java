@@ -4,10 +4,7 @@ import com.auto.tests.driver.WebDriverChrome;
 import com.auto.tests.listeners.AllureAttachmentListener;
 import common.utils.Config;
 import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.Listeners;
+import org.testng.annotations.*;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -67,6 +64,12 @@ public class BaseTest {
         System.out.println("environment BaseTest: "+ environment);
         someUrl = prop.getProperty(environment);
         System.out.println("someUrl: " + someUrl);
+
+    }
+
+    @BeforeClass
+    public void initDriver(){
+        driver = WebDriverChrome.getInstance().getChromeDriver();
     }
 
     @AfterSuite
