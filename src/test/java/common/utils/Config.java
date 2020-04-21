@@ -14,6 +14,7 @@ public class Config {
 
     private static String SYSTEM_TEST_PROP = "system.test.";
     private static String USER_DIR_PROP = "user.dir";
+    private static String TESTNG_XML ="/src/test/resources/TestNGSuiteConfig.xml";
 
     public interface ConfigProps {
         // RUNTIME CONFIG
@@ -25,7 +26,7 @@ public class Config {
         if (parameterValue != null) {
             return parameterValue;
         }
-        String propFromXML = getXPathValueFromFile(getConfigFileLocation(), getParameterValue(parameterName));
+        String propFromXML = getXPathValueFromFile(getConfigFileLocation(TESTNG_XML), getParameterValue(parameterName));
         System.setProperty(SYSTEM_TEST_PROP + parameterName.toLowerCase(), propFromXML);
         return propFromXML;
     }
@@ -47,8 +48,8 @@ public class Config {
         return value;
     }
 
-    private static String getConfigFileLocation() {
-        String fileLoc = System.getProperty(USER_DIR_PROP) + "/src/test/resources/TestNGSuiteConfig.xml";
+    public static String getConfigFileLocation(String filePartPath) {
+        String fileLoc = System.getProperty(USER_DIR_PROP) + filePartPath;
         return fileLoc.replace("/", File.separator);
     }
 

@@ -17,10 +17,12 @@ import java.util.concurrent.TimeUnit;
 @Story("Google Chrome2 story")
 public class Chrome2Test extends BaseTest{
 
-    @BeforeClass
-    public void setUp(){
-//        driver = WebDriverChrome.getInstance().getChromeDriver();
+    @Test
+    public void someAssert(){
+        System.out.println("chrome2......test");
+        Assert.assertTrue(true);
     }
+
 
     @Issue("TTT-55")
     @Test

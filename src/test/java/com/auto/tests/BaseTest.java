@@ -10,7 +10,8 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
-import java.util.concurrent.TimeUnit;
+
+import static common.utils.Config.getConfigFileLocation;
 
 @Listeners(AllureAttachmentListener.class)
 public class BaseTest {
@@ -43,8 +44,21 @@ public class BaseTest {
             browserToRun = Config.ConfigProps.BROWSER.toUpperCase();
         }
         //for chrome
-        System.setProperty("webdriver.chrome.driver", "d:\\git\\TrainProject\\src\\test\\resources\\drivers\\chromedriver.exe");
-        //System.setProperty("webdriver.firefox.marionette","d:\\git\\TrainProject\\src\\test\\resources\\drivers\\geckodriver.exe");
+        //toDo:
+        String platform = "Windows";//"Linux";//"Windows";//Mac
+        String pathToDriver = "";
+        switch (platform){
+            case "Windows":
+                pathToDriver = getConfigFileLocation("/src/test/resources/drivers/win64/chromedriver.exe");
+                break;
+            case "Linux":
+                pathToDriver = getConfigFileLocation("/src/test/resources/drivers/linux64/chromedriver");
+                break;
+            case "Mac":
+                break;
+        }
+        System.out.println("pathToDriver: " + pathToDriver);
+        System.setProperty("webdriver.chrome.driver", pathToDriver);
         System.out.println("========driver===" + browserToRun);
 
         //Reading from properties file
