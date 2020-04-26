@@ -22,7 +22,7 @@ public class ChromeTest extends BaseTest{
         Assert.assertTrue(true);
     }
 
-    @Issue("TTT-45")
+    //@Issue("TTT-45")
     @Test
     public void verifySearchButton() {
 

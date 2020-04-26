@@ -23,7 +23,7 @@ public class Chrome2Test extends BaseTest{
         Assert.assertTrue(true);
     }
 
-
+/*
     @Issue("TTT-55")
     @Test
     public void verifySearchButton() {
@@ -34,5 +34,5 @@ public class Chrome2Test extends BaseTest{
         String text = search_button.getAttribute("value");
 
         Assert.assertEquals(search_text, search_text, "Text not found!");
-    }
+    }*/
 }

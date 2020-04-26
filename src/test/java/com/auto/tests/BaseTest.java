@@ -13,7 +13,7 @@ import java.util.Properties;
 
 import static common.utils.Config.getConfigFileLocation;
 
-@Listeners(AllureAttachmentListener.class)
+//@Listeners(AllureAttachmentListener.class)
 public class BaseTest {
 
     protected static final String propFileName = "application.properties";
@@ -45,7 +45,7 @@ public class BaseTest {
         }
         //for chrome
         //toDo:
-        String platform = "Windows";//"Linux";//"Windows";//Mac
+        String platform = "Linux";//"Linux";//"Windows";//Mac
         String pathToDriver = "";
         switch (platform){
             case "Windows":

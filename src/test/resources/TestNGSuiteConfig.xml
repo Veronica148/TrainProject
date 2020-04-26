@@ -1,22 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<suite name="Demo suite 1" verbose="1" >
+<suite name="Demo suite 1" parallel="tests" thread-count="2">
     <parameter name="Browser" value="Chrome"/>
 
-    <test name="Demo test allure report" >
-        <!--<classes>
+    <!--test name="Demo test allure report" >
+        <<classes>
             <class name="com.techbeamers.TestA"/>
-        </classes>-->
-        <!--<packages>
+        </classes>>
+        <<packages>
             <package name="com.auto.tests.*" />
-        </packages>then uncomment-->
+        </packages>then uncomment>
         <classes>
-            <!--<class name="com.auto.tests.allurecheck.Test1" />
-            <class name="com.auto.tests.allurecheck.Test2" />-->
+            <<class name="com.auto.tests.allurecheck.Test1" />
+            <class name="com.auto.tests.allurecheck.Test2" />>
             <class name="com.auto.tests.ChromeTest" />
             <class name="com.auto.tests.Chrome2Test" />
         </classes>
-        <!--<classes>
-            <class name="com.auto.tests.ChromeTest" />
-        </classes>-->
+    </test-->
+    <test name="Tests on Chrome">
+        <classes>
+            <class name="com.auto.tests.dockerDemo.ChromeDemo" />
+        </classes>
+    </test>
+    <test name="Tests on Firefox">
+        <classes>
+            <class name="com.auto.tests.dockerDemo.FFDemo" />
+        </classes>
     </test>
 </suite>

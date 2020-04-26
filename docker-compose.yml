@@ -1,0 +1,39 @@
+version: "3"
+services:
+  selenium-hub:
+    image: selenium/hub:3.141.59
+    container_name: selenium-hub1
+    ports:
+      - "4444:4444"
+    expose:
+      - 4444
+
+  chrome:
+    image: selenium/node-chrome-debug:3.141.59
+    container_name: chrome
+    deploy:
+      replicas: 1
+    ports:
+      - "5901:5900"
+    volumes:
+      - /dev/shm:/dev/shm
+    depends_on:
+      - selenium-hub
+    environment:
+      - HUB_HOST=selenium-hub1
+      - HUB_PORT=4444
+
+  firefox:
+    image: selenium/node-firefox-debug:3.141.59
+    container_name: firefox
+    deploy:
+      replicas: 1
+    ports:
+      - "5902:5900"
+    volumes:
+      - /dev/shm:/dev/shm
+    depends_on:
+      - selenium-hub
+    environment:
+      - HUB_HOST=selenium-hub1
+      - HUB_PORT=4444
