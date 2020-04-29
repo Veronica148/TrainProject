@@ -1,6 +1,7 @@
 package com.auto.tests.dockerDemo;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.BrowserType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -16,7 +17,7 @@ public class FFDemo {
         System.out.println("Test for Firefox");
         DesiredCapabilities cap = new DesiredCapabilities();
         cap.setBrowserName(BrowserType.FIREFOX);
-        RemoteWebDriver driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"),cap);
+        WebDriver driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"),cap);
         driver.get("http://www.google.com");
         driver.findElement(By.name("q")).sendKeys("Automation");
         Thread.sleep(5000);
